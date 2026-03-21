@@ -1,24 +1,14 @@
-:root {
-  color-scheme: light dark;
-  background-color: #ffffff;
+html {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    background-color: #16171d;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-body {
+body,
+p {
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 320px;
-  min-height: 100svh;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
