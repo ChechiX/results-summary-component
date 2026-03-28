@@ -1,69 +1,51 @@
 import { css, html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
+import { Task } from '@lit/task';
+
+import type { Results } from './interfaces/results-interface';
+
+import './components/result-card';
+import './components/summary-card';
+
 @customElement('results-summary-component')
 export class ResultsSummaryComponent extends LitElement {
+  private _task = new Task(this, {
+    task: async () => {
+      const response = await fetch('/data.json');
+
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+
+      return response.json() as Promise<Results[]>;
+    },
+    args: () => [],
+  });
+
   render() {
-    return html`<main class="result">
-      <h1>Your Result</h1>
+    console.log('results-summary render status:', this._task);
 
-      <div class="result__score">
-        <p>76 <span>of 100</span></p>
-      </div>
+    return this._task.render({
+      pending: () => html`<p>Loading...</p>`,
+      complete: (results) => {
+        const totalScore = results.reduce(
+          (acc, result) => Math.floor(acc + result.score / results.length),
+          0,
+        );
 
-      <div class="result__feedback">
-        <h2>Great</h2>
-
-        <p>
-          You scored higher than 65% of the people who have taken these tests.
-        </p>
-      </div>
-    </main>`;
+        return html`<main class="result-summary">
+          <result-card .score=${totalScore}></result-card>
+          <summary-card></summary-card>
+        </main>`;
+      },
+      error: (e) => html`<p>Error: ${e}</p>`,
+    });
   }
 
   static styles = css`
-    h1,
-    p,
-    h2 {
-      margin: 0;
-    }
-
-    .result {
-      padding: 32px 57.5px;
-      background-color: #1125d6;
-      box-shadow: 0 30px 60px 0 rgba(61, 108, 236, 0.15);
-      border-bottom-left-radius: 32px;
-      border-bottom-right-radius: 32px;
-      text-align: center;
-      background: linear-gradient(to bottom, #7755ff, #2f2ce9);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .result__score {
-      width: 140px;
-      height: 140px;
-      background: linear-gradient(
-        to bottom,
-        rgba(77, 33, 201, 1),
-        rgba(37, 33, 201, 0)
-      );
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    span {
-      display: block;
-    }
-
-    .result__feedback {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .result-summary {
+      display: grid;
     }
   `;
 }
