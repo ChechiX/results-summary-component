@@ -30,12 +30,14 @@ export class ResultsSummaryComponent extends LitElement {
       pending: () => html`<p>Loading...</p>`,
       complete: (results) => {
         const totalScore = results.reduce(
-          (acc, result) => Math.floor(acc + result.score / results.length),
+          (acc, result) => acc + result.score,
           0,
         );
 
+        const averageScore = Math.floor(totalScore / results.length);
+
         return html`<main class="result-summary">
-          <result-card .score=${totalScore}></result-card>
+          <result-card score=${averageScore}></result-card>
           <summary-card></summary-card>
         </main>`;
       },
