@@ -24,8 +24,6 @@ export class ResultsSummaryComponent extends LitElement {
   });
 
   render() {
-    console.log('results-summary render status:', this._task);
-
     return this._task.render({
       pending: () => html`<p>Loading...</p>`,
       complete: (results) => {
@@ -38,7 +36,8 @@ export class ResultsSummaryComponent extends LitElement {
 
         return html`<main class="result-summary">
           <result-card score=${averageScore}></result-card>
-          <summary-card></summary-card>
+
+          <summary-card .items=${results}></summary-card>
         </main>`;
       },
       error: (e) => html`<p>Error: ${e}</p>`,
@@ -48,6 +47,7 @@ export class ResultsSummaryComponent extends LitElement {
   static styles = css`
     .result-summary {
       display: grid;
+      gap: 24px;
     }
   `;
 }

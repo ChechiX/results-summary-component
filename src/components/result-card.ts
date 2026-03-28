@@ -32,7 +32,6 @@ export class ResultCard extends LitElement {
 
     .result {
       padding: 32px 57.5px;
-      background-color: #1125d6;
       box-shadow: 0 30px 60px 0 rgba(61, 108, 236, 0.15);
       border-bottom-left-radius: 32px;
       border-bottom-right-radius: 32px;
