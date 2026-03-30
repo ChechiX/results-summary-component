@@ -9,6 +9,17 @@ import './summary-item';
 export class SummaryCard extends LitElement {
   @property({ attribute: false }) items: Results[] = [];
 
+  private categoryColors: Record<string, { bg: string; text: string }> = {
+    Reaction: { bg: '#FFF6F6', text: '#FF5555' },
+    Memory: { bg: '#FFFBF4', text: '#FFB21E' },
+    Verbal: { bg: '#F2FCF9', text: '#00BB8F' },
+    Visual: { bg: '#F3F4FD', text: '#1125D6' },
+  };
+
+  private getCategoryColors(category: string) {
+    return this.categoryColors[category];
+  }
+
   render() {
     return html`<section class="summary-card">
       <h2 class="summary-card__title">Summary</h2>
@@ -20,6 +31,7 @@ export class SummaryCard extends LitElement {
               .icon=${item.icon}
               .category=${item.category}
               .score=${item.score}
+              .categoryColors=${this.getCategoryColors(item.category)}
             ></summary-item>`,
         )}
       </ul>
