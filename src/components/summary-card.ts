@@ -46,6 +46,11 @@ export class SummaryCard extends LitElement {
       display: flex;
       flex-direction: column;
       gap: 24px;
+
+      @media (min-width: 48rem) {
+        gap: 32px;
+        padding: 44.5px 39.64px;
+      }
     }
 
     .summary-card__title {
@@ -54,6 +59,10 @@ export class SummaryCard extends LitElement {
       font-size: var(--text-preset-5-font-size-bold);
       line-height: var(--text-preset-5-line-height-bold);
       font-weight: 700;
+
+      @media (min-width: 48rem) {
+        font-size: var(--text-preset-4-font-size);
+      }
     }
 
     .summary-card__list {

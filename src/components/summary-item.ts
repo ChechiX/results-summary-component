@@ -38,6 +38,13 @@ export class SummaryItem extends LitElement {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      font-size: var(--text-preset-6-font-size-medium);
+      line-height: var(--text-preset-6-line-height-medium);
+
+      @media (min-width: 48rem) {
+        font-size: var(--text-preset-5-font-size-medium);
+        padding: 16.5px 16.86px;
+      }
     }
 
     .summary-item__category-info {
@@ -46,15 +53,11 @@ export class SummaryItem extends LitElement {
     }
 
     .summary-item__category {
-      font-size: var(--text-preset-6-font-size-medium);
-      line-height: var(--text-preset-6-line-height-medium);
       font-weight: 500;
     }
 
     .summary-item__score {
       color: var(--navy-200);
-      font-size: var(--text-preset-6-font-size-bold);
-      line-height: var(--text-preset-6-line-height-bold);
       font-weight: 700;
     }
 

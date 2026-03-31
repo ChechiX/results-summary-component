@@ -48,6 +48,14 @@ export class ResultsSummaryComponent extends LitElement {
     .result-summary {
       display: grid;
       gap: 24px;
+
+      @media (min-width: 48rem) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        background-color: var(--white);
+        border-radius: 32px;
+        box-shadow: 0 30px 60px 0 rgba(61, 108, 236, 0.15);
+      }
     }
   `;
 }
