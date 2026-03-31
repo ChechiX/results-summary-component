@@ -10,7 +10,7 @@ export class ResultCard extends LitElement {
       <h1>Your Result</h1>
 
       <div class="result__score">
-        <p>${this.score} <span>of 100</span></p>
+        <p class="result__score-value">${this.score} <span>of 100</span></p>
       </div>
 
       <div class="result__feedback">
@@ -45,6 +45,9 @@ export class ResultCard extends LitElement {
 
     h1 {
       color: var(--navy-200);
+      font-weight: 700;
+      font-size: var(--text-preset-5-font-size-bold);
+      line-height: var(--text-preset-5-line-height-bold);
     }
 
     .result__score {
@@ -62,9 +65,18 @@ export class ResultCard extends LitElement {
       color: var(--white);
     }
 
+    .result__score-value {
+      font-size: var(--text-preset-2-font-size);
+      line-height: var(--text-preset-2-line-height);
+      font-weight: 800;
+    }
+
     span {
       display: block;
       color: var(--navy-200);
+      font-size: var(--text-preset-6-font-size-bold);
+      line-height: var(--text-preset-6-line-height-bold);
+      font-weight: 700;
     }
 
     .result__feedback {
@@ -75,10 +87,16 @@ export class ResultCard extends LitElement {
 
     h2 {
       color: var(--white);
+      font-size: var(--text-preset-4-font-size);
+      line-height: var(--text-preset-4-line-height);
+      font-weight: 700;
     }
 
     .result__feedback-text {
       color: var(--navy-200);
+      font-size: var(--text-preset-6-font-size-medium);
+      line-height: var(--text-preset-6-line-height-medium);
+      font-weight: 500;
     }
   `;
 }

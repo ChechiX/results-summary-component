@@ -45,8 +45,17 @@ export class SummaryItem extends LitElement {
       gap: 16px;
     }
 
+    .summary-item__category {
+      font-size: var(--text-preset-6-font-size-medium);
+      line-height: var(--text-preset-6-line-height-medium);
+      font-weight: 500;
+    }
+
     .summary-item__score {
       color: var(--navy-200);
+      font-size: var(--text-preset-6-font-size-bold);
+      line-height: var(--text-preset-6-line-height-bold);
+      font-weight: 700;
     }
 
     strong {

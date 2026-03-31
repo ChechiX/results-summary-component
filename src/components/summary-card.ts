@@ -51,6 +51,9 @@ export class SummaryCard extends LitElement {
     .summary-card__title {
       margin: 0;
       color: var(--navy-950);
+      font-size: var(--text-preset-5-font-size-bold);
+      line-height: var(--text-preset-5-line-height-bold);
+      font-weight: 700;
     }
 
     .summary-card__list {
@@ -68,6 +71,10 @@ export class SummaryCard extends LitElement {
       color: var(--white);
       padding: 16.5px 0;
       border: none;
+      font-family: inherit;
+      font-size: var(--text-preset-5-font-size-bold);
+      line-height: var(--text-preset-5-line-height-bold);
+      font-weight: 700;
     }
   `;
 }
