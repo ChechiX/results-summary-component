@@ -46,11 +46,11 @@ export class SummaryItem extends LitElement {
     }
 
     .summary-item__score {
-      color: #cac9ff;
+      color: var(--navy-200);
     }
 
     strong {
-      color: #303b59;
+      color: var(--navy-950);
     }
   `;
 }

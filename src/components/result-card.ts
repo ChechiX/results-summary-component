@@ -16,7 +16,7 @@ export class ResultCard extends LitElement {
       <div class="result__feedback">
         <h2>Great</h2>
 
-        <p>
+        <p class="result__feedback-text">
           You scored higher than 65% of the people who have taken these tests.
         </p>
       </div>
@@ -43,6 +43,10 @@ export class ResultCard extends LitElement {
       gap: 24px;
     }
 
+    h1 {
+      color: var(--navy-200);
+    }
+
     .result__score {
       width: 140px;
       height: 140px;
@@ -55,16 +59,26 @@ export class ResultCard extends LitElement {
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--white);
     }
 
     span {
       display: block;
+      color: var(--navy-200);
     }
 
     .result__feedback {
       display: flex;
       flex-direction: column;
       gap: 8px;
+    }
+
+    h2 {
+      color: var(--white);
+    }
+
+    .result__feedback-text {
+      color: var(--navy-200);
     }
   `;
 }

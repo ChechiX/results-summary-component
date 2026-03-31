@@ -35,6 +35,8 @@ export class SummaryCard extends LitElement {
             ></summary-item>`,
         )}
       </ul>
+
+      <button class="summary-card__button">Continue</button>
     </section>`;
   }
 
@@ -48,6 +50,7 @@ export class SummaryCard extends LitElement {
 
     .summary-card__title {
       margin: 0;
+      color: var(--navy-950);
     }
 
     .summary-card__list {
@@ -57,6 +60,14 @@ export class SummaryCard extends LitElement {
       display: flex;
       flex-direction: column;
       gap: 16px;
+    }
+
+    .summary-card__button {
+      border-radius: 128px;
+      background-color: var(--navy-950);
+      color: var(--white);
+      padding: 16.5px 0;
+      border: none;
     }
   `;
 }

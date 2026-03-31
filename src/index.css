@@ -1,14 +1,21 @@
-html {
-  box-sizing: border-box;
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --yellow-50: #fffbf4;
+  --yellow-400: #ffb21e;
+  --red-50: #fff6f6;
+  --red-400: #ff5555;
+  --green-50: #f2fcf9;
+  --green-500: #00bb8f;
+  --blue-50: #f3f4fd;
+  --blue-800: #1125d6;
+  --navy-50: #ecf2ff;
+  --navy-200: #cac9ff;
+  --navy-950: #303b59;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
+body,
+p {
   margin: 0;
 }
 
