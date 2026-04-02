@@ -80,7 +80,7 @@ export class SummaryCard extends LitElement {
 
     .summary-card__button {
       border-radius: 128px;
-      background-color: var(--navy-950);
+      background: var(--navy-950);
       color: var(--white);
       padding: 16.5px 0;
       border: none;
@@ -88,6 +88,11 @@ export class SummaryCard extends LitElement {
       font-size: var(--text-preset-5-font-size-bold);
       line-height: var(--text-preset-5-line-height-bold);
       font-weight: 700;
+      transition: background 0.5s ease-in-out;
+    }
+
+    .summary-card__button:hover {
+      background: linear-gradient(to bottom, #7755ff, #2f2ce9);
     }
   `;
 }
