@@ -51,6 +51,10 @@ export class SummaryCard extends LitElement {
         gap: 32px;
         padding: 44.5px 39.64px;
       }
+
+      @media (min-width: 90rem) {
+        padding: 44.5px 40px;
+      }
     }
 
     .summary-card__title {

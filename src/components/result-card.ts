@@ -52,6 +52,10 @@ export class ResultCard extends LitElement {
           gap: 32px;
           box-shadow: unset;
         }
+
+        @media (min-width: 90rem) {
+          padding: 45px 54px;
+        }
       }
 
       h1 {
@@ -111,6 +115,10 @@ export class ResultCard extends LitElement {
         display: flex;
         flex-direction: column;
         gap: 8px;
+
+        @media (min-width: 48rem) {
+          gap: 16px;
+        }
       }
 
       h2 {
